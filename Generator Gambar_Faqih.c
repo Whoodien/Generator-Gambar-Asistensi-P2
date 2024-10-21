@@ -11,8 +11,8 @@
 void generateStaticImage(int length, int width) {
     srand(time(NULL));
     // Menampilkan gambar statis
-    for (int i = 0; i < length; i++) {
-        for (int j = 0; j < width; j++) {
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < length; j++) {
             int random_choice = rand() % 2;
             if (random_choice == 0){
                 printf("*");
@@ -25,11 +25,11 @@ void generateStaticImage(int length, int width) {
 
 void generateMovingImage(int length, int width) {
     // Menampilkan gambar yang bergerak
-    for (int offset = 0; offset < width; offset++) {
+    for (int offset = 0; offset < length; offset++) {
         // Menampilkan gambar dengan offset
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < width; j++) {
-                if (j < offset || j >= offset + width) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                if (j < offset || j >= offset + length) {
                     printf(" ");
                 } else {
                     printf("*");
